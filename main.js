@@ -14,6 +14,22 @@
  this._shadowRoot.appendChild(template.content.cloneNode(true))
  this._root = this._shadowRoot.getElementById('root')
  }
+ 
+ onCustomWidgetResize (width, height) {
+	 this.render()
  }
+ 
+ onCustomWidgetAfterUpdate(changeProps){
+ }
+ 
+ onCustomWidgetDestroy() {
+ }
+ 
+ render() {
+	 this.root.textContent = 'Hello Custom Widget clientWidth: ${this.clientWidth}, clientHeight: ${this.clientHeight}'
+ }
+ }
+ 
  customElements.define('com-sap-sac-exercise-yskim-main', Main)
+ 
  })()
